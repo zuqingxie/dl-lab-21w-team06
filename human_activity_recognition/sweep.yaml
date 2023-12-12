@@ -1,0 +1,49 @@
+command:
+- ${env}
+- python3
+- ${program}
+- ${args}
+method: random
+metric:
+  goal: maximize
+  name: val_acc
+name: hapt-gru-sweep
+parameters:
+  Trainer.total_steps:
+    values:
+    - 5000
+  create_tfrecords.window_length:
+    distribution: q_uniform
+    max: 300
+    min: 200
+    q: 50
+  create_tfrecords.window_shift:
+    distribution: q_uniform
+    max: 150
+    min: 100
+    q: 25
+  rnn.dropout_rate:
+    distribution: uniform
+    max: 0.8
+    min: 0.2
+  rnn.lstm_units:
+    distribution: q_uniform
+    max: 128
+    min: 32
+    q: 16
+  rnn.dense_units:
+    distribution: q_uniform
+    max: 128
+    min: 32
+    q: 16
+  rnn.num_rnn:
+    distribution: q_uniform
+    max: 6
+    min: 3
+    q: 1
+  rnn.num_name:
+    distribution: q_uniform
+    max: 3
+    min: 1
+    q: 1
+program: hapt_wandb_train.py

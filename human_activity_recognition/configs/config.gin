@@ -1,0 +1,39 @@
+# Window
+create_tfrecords.window_length = 300
+create_tfrecords.window_shift = 100
+create_tfrecords.data_dir = "/home/data/HAPT_dataset/RawData"
+create_tfrecords.records_dir = "~/dl-lab-21w-team06/human_activity_recognition/input_pipeline"
+
+
+
+# rnn_mix model
+rnn_mix.window_size = 300
+rnn_mix.units = 128
+rnn_mix.dropout_rate = 0.5
+rnn_mix.dense_units = 64
+
+# rnn model
+rnn.dropout_rate = 0.4
+rnn.window_size = 300
+rnn.lstm_units = 112
+rnn.dense_units = 32
+rnn.num_rnn = 5
+rnn.rnn_name = "lstm"
+rnn.activation = "tanh"
+
+
+# Training
+Trainer.total_steps = 2500
+Trainer.log_interval = 20
+Trainer.ckpt_interval = 20
+Trainer.learning_rate = 0.0008
+Trainer.beta_1 = 0.9
+Trainer.beta_2 = 0.9
+
+
+# Input pipeline
+load.name = 'hapt'
+
+# Prepare the dataset
+prepare.batch_size = 32
+prepare.caching = True

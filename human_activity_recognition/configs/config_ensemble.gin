@@ -1,0 +1,15 @@
+# Window
+create_tfrecords.window_length = 300
+create_tfrecords.window_shift = 100
+create_tfrecords.data_dir = "/home/data/HAPT_dataset/RawData"
+create_tfrecords.records_dir = "~/dl-lab-21w-team06/human_activity_recognition/input_pipeline"
+
+# Input pipeline
+load.name = 'hapt'
+
+# Prepare the dataset
+prepare.batch_size = 32
+prepare.caching = True
+
+# Ensemble_learning
+Ensemble.weight_list = [0.3, 0.3, 0.2, 0.15, 0.05]

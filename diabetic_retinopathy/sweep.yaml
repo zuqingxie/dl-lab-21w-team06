@@ -1,0 +1,33 @@
+command:
+- ${env}
+- python3
+- ${program}
+- ${args}
+method: grid
+metric:
+  goal: maximize
+  name: val_acc
+name: resnet-final-sweep
+parameters:
+  resnet_simple.block_num:
+    values:
+    - 1
+    - 2
+  resnet_simple.filters:
+    values:
+    - 4
+    - 8
+    - 12
+    - 16
+  resnet_simple.Dense_fc_num:
+    values:
+    - 16
+    - 32
+    - 48
+    - 64
+  resnet_simple.dropout_rate:
+    values:
+    - 0.3
+    - 0.4
+    - 0.5
+program: wandb_train.py

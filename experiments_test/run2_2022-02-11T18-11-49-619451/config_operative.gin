@@ -1,0 +1,42 @@
+# Parameters for create_tfrecords:
+# ==============================================================================
+create_tfrecords.data_dir = \
+    'D:\\1.0 Elektromobilitat\\18 DL Labor\\HAPT Data Set\\RawData'
+create_tfrecords.records_dir = 'C:\\Users\\xiezu\\Desktop'
+create_tfrecords.window_length = 300
+create_tfrecords.window_shift = 100
+
+# Parameters for load:
+# ==============================================================================
+load.name = 'hapt'
+
+# Parameters for prepare:
+# ==============================================================================
+prepare.batch_size = 32
+prepare.caching = True
+
+# Parameters for rnn:
+# ==============================================================================
+rnn.activation = 'tanh'
+rnn.dense_units = 32
+rnn.dropout_rate = 0.4
+rnn.lstm_units = 128
+rnn.num_rnn = 5
+rnn.rnn_name = 'gru'
+rnn.window_size = 300
+
+# Parameters for rnn_mix:
+# ==============================================================================
+rnn_mix.dense_units = 64
+rnn_mix.dropout_rate = 0.5
+rnn_mix.units = 128
+rnn_mix.window_size = 300
+
+# Parameters for Trainer:
+# ==============================================================================
+Trainer.beta_1 = 0.9
+Trainer.beta_2 = 0.9
+Trainer.ckpt_interval = 20
+Trainer.learning_rate = 0.0008
+Trainer.log_interval = 20
+Trainer.total_steps = 2500

@@ -1,0 +1,70 @@
+# Parameters for CNN_team06:
+# ==============================================================================
+CNN_team06.dropout_rate = 0.5
+CNN_team06.filters = (12, 24, 48, 96)
+CNN_team06.input_shape = (256, 256, 3)
+CNN_team06.kernel_size = (5, 5, 3, 3)
+CNN_team06.n_classes = 2
+CNN_team06.pool_size = 2
+CNN_team06.strides = (1, 1, 1, 1)
+
+# Parameters for ConfusionMatrix:
+# ==============================================================================
+ConfusionMatrix.f_betha = 0.9
+
+# Parameters for create_tfrecords:
+# ==============================================================================
+create_tfrecords.data_dir = '/home/data/IDRID_dataset'
+create_tfrecords.record_dir = './input_pipeline'
+
+# Parameters for load:
+# ==============================================================================
+load.data_dir = '/home/data/tensorflow_datasets'
+load.name = 'idrid'
+
+# Parameters for prepare:
+# ==============================================================================
+prepare.batch_size = 32
+prepare.caching = True
+
+# Parameters for preprocess:
+# ==============================================================================
+preprocess.img_height = 256
+preprocess.img_width = 256
+
+# Parameters for raw_or_aug:
+# ==============================================================================
+raw_or_aug.i = 0.4
+
+# Parameters for resnet_simple:
+# ==============================================================================
+resnet_simple.Dense_fc_num = 16
+resnet_simple.block_num = 1
+resnet_simple.dropout_rate = 0.4
+resnet_simple.filters = 3
+resnet_simple.input_shape = (256, 256, 3)
+resnet_simple.kernel_size = (3, 3)
+resnet_simple.n_classes = 2
+
+# Parameters for Trainer:
+# ==============================================================================
+Trainer.ckpt_interval = 20
+Trainer.log_interval = 20
+Trainer.sweep = True
+Trainer.total_steps = 10000
+
+# Parameters for Transfer_module:
+# ==============================================================================
+Transfer_module.dropout_rate = 0.2
+Transfer_module.num_classes = 2
+
+# Parameters for vgg_block:
+# ==============================================================================
+vgg_block.kernel_size = (3, 3)
+
+# Parameters for vgg_like:
+# ==============================================================================
+vgg_like.base_filters = 8
+vgg_like.dense_units = 64
+vgg_like.dropout_rate = 0.44
+vgg_like.n_blocks = 6
